@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Unity对话系统 | Zortime&#39;s box</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Unity学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity对话系统">
+<meta property="og:url" content="http://example.com/2023/11/04/23-11-4/index.html">
+<meta property="og:site_name" content="Zortime&#39;s box">
+<meta property="og:description" content="Unity学习">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/photo/N32.png">
+<meta property="og:image" content="http://example.com/photo/N33.png">
+<meta property="article:published_time" content="2023-11-04T12:45:26.000Z">
+<meta property="article:modified_time" content="2023-11-04T13:04:24.835Z">
+<meta property="article:author" content="Zortime">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/photo/N32.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Zortime's box" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Zortime&#39;s box</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-23-11-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/04/23-11-4/" class="article-date">
+  <time class="dt-published" datetime="2023-11-04T12:45:26.000Z" itemprop="datePublished">2023-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/">游戏制作</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Unity对话系统
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="想着自己做了个对话框架，以后方便调用，为了防止和之前一样爆盘丢掉，所以在这备份"><a href="#想着自己做了个对话框架，以后方便调用，为了防止和之前一样爆盘丢掉，所以在这备份" class="headerlink" title="想着自己做了个对话框架，以后方便调用，为了防止和之前一样爆盘丢掉，所以在这备份"></a>想着自己做了个对话框架，以后方便调用，为了防止和之前一样爆盘丢掉，所以在这备份</h2><span id="more"></span>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Diagnostics;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.UI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">DialogSystem</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Header(<span class="string">&quot;UI组件&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">public</span> Text textLabel;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">Header(<span class="string">&quot;文本文件&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">public</span> TextAsset textFile;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> index;</span><br><span class="line"></span><br><span class="line">    List&lt;<span class="built_in">string</span>&gt; textList = <span class="keyword">new</span> List&lt;<span class="built_in">string</span>&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        GetTextFromFile(textFile);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnEnable</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        textLabel.text = textList[index]; </span><br><span class="line">        index++; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetKeyDown(KeyCode.Space)&amp;&amp;textFinished)</span><br><span class="line">        &#123;</span><br><span class="line">            textLabel.text = textList[index];  </span><br><span class="line">            index++; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">GetTextFromFile</span>(<span class="params">TextAsset flie</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        textList.Clear();</span><br><span class="line">        index = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> lineDate =flie.text.Split(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">var</span> line <span class="keyword">in</span> lineDate)</span><br><span class="line">        &#123;</span><br><span class="line">            textList.Add(line);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后升级了一下，这是逐字打印</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Diagnostics;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.UI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">DialogSystem</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Header(<span class="string">&quot;UI组件&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">public</span> Text textLabel;</span><br><span class="line">    <span class="keyword">public</span> Text nametextlabel;</span><br><span class="line">    <span class="keyword">public</span> Image faceImage;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">Header(<span class="string">&quot;文本文件&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">public</span> TextAsset textFile;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> index;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">float</span> TextSpeed;</span><br><span class="line">    [<span class="meta">Header(<span class="string">&quot;头像&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">public</span> Sprite face01, face02;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">bool</span> textFinished;<span class="comment">//是否完成打印</span></span><br><span class="line">    <span class="built_in">bool</span> cancelTyping;<span class="comment">//取消逐字打印</span></span><br><span class="line">    List&lt;<span class="built_in">string</span>&gt; textList = <span class="keyword">new</span> List&lt;<span class="built_in">string</span>&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        GetTextFromFile(textFile);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnEnable</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        textFinished = <span class="literal">true</span>;</span><br><span class="line">        StartCoroutine(SetTextUI());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(Input.GetKeyDown(KeyCode.Space) &amp;&amp; index== textList.Count)</span><br><span class="line">        &#123;</span><br><span class="line">            gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">            index = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetKeyDown(KeyCode.Space))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(textFinished&amp;&amp;!cancelTyping)</span><br><span class="line">            &#123;</span><br><span class="line">                StartCoroutine(SetTextUI());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(!textFinished&amp;&amp;!cancelTyping)</span><br><span class="line">            &#123;</span><br><span class="line">                cancelTyping = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">GetTextFromFile</span>(<span class="params">TextAsset flie</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        textList.Clear();</span><br><span class="line">        index = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> lineDate =flie.text.Split(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">var</span> line <span class="keyword">in</span> lineDate)</span><br><span class="line">        &#123;</span><br><span class="line">            textList.Add(line);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">IEnumerator <span class="title">SetTextUI</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        textFinished = <span class="literal">false</span>;</span><br><span class="line">        textLabel.text = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span>(textList[index].Trim().ToString())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;A&quot;</span>:</span><br><span class="line">                nametextlabel.text = <span class="string">&quot;name1&quot;</span>;</span><br><span class="line">                faceImage.sprite = face01;</span><br><span class="line">                index++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;B&quot;</span>:</span><br><span class="line">                nametextlabel.text = <span class="string">&quot;name2&quot;</span>;</span><br><span class="line">                faceImage.sprite = face02;</span><br><span class="line">                index++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">int</span> letter = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!cancelTyping &amp;&amp; letter &lt; textList[index].Length - <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            textLabel.text += textList[index][letter];</span><br><span class="line">            letter++;</span><br><span class="line">            <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="keyword">new</span> <span class="title">WaitForSeconds</span>(<span class="params">TextSpeed</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        textLabel.text = textList[index];</span><br><span class="line">        cancelTyping = <span class="literal">false</span>;</span><br><span class="line">        textFinished = <span class="literal">true</span>;</span><br><span class="line">        index++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后是组件搭载方式<br><img src="/photo/N32.png" alt="这是这个脚本的gameobjext搭法"><br><img src="/photo/N33.png" alt="父子类关系"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/04/23-11-4/" data-id="clok24nlq000mqwlsdy4d772l" data-title="Unity对话系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/11/03/23-11-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">依然是素材</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BA%9F%E8%AF%9D/">废话</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/">游戏制作</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C/" rel="tag">文学创作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%85%A7%E7%89%87/" rel="tag">照片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%98%E7%94%BB/" rel="tag">绘画</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 16.67px;">学习</a> <a href="/tags/%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C/" style="font-size: 13.33px;">文学创作</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 20px;">游戏</a> <a href="/tags/%E7%85%A7%E7%89%87/" style="font-size: 10px;">照片</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 20px;">生活</a> <a href="/tags/%E7%BB%98%E7%94%BB/" style="font-size: 20px;">绘画</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/04/23-11-4/">Unity对话系统</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/03/23-11-3/">依然是素材</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/30/23-10-30/">今天是杂谈</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/29/23-10-29/">今天的练习</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/28/23-10-28/">尝试写点东西</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Zortime<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
